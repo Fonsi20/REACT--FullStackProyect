@@ -2,7 +2,7 @@
 // /client/App.js
 import React, { Component } from "react";
 import axios from "axios";
-import viewDetail from './viewDetail';
+
 import ReactDOM from 'react-dom';
 import { EnhancedTable } from './table';
 import TextField from '@material-ui/core/TextField';
@@ -29,9 +29,9 @@ class Home extends Component {
         newselected: [],
     };
 
-    a(id, brand, model, color, fuel_type, engine_volume, traction, price) {
+    a(id, brand, model, color, fuel_type, engine_volume, traction, price, data) {
         console.log("HOME: "+id);
-        this.props.returnstate(id, brand, model, color, fuel_type, engine_volume, traction, price)
+        this.props.returnstate(id, brand, model, color, fuel_type, engine_volume, traction, price, data)
     }
 
     getSelectData = (selected) => {
@@ -290,7 +290,7 @@ class Home extends Component {
                         <Link to="/viewDetail">
                             <button
                                 style={{ width: "150px", backgroundColor: "#7BDB86", color: "#fff", marginLeft: "20px", border: "15px", height: "35px", borderRadius: "35px" }}
-                                onClick={e => { this.a(this.state.id, this.state.brand, this.state.model, this.state.color, this.state.fuel_type, this.state.engine_volume, this.state.traction, this.state.price) }}>
+                                onClick={e => { this.a(this.state.id, this.state.brand, this.state.model, this.state.color, this.state.fuel_type, this.state.engine_volume, this.state.traction, this.state.price, this.state.date) }}>
                                 <b> DETAILS</b>
                             </button>
                         </Link>

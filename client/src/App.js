@@ -2,6 +2,7 @@
 // /client/App.js
 import React, { Component } from "react";
 import ViewDetail from './ViewDetail';
+import axios from "axios";
 import Home from './Home';
 import ReactDOM from 'react-dom';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
@@ -28,8 +29,9 @@ class App extends Component {
     newselected: [],
   };
 
-  givemestate(id, brand, model, color, fuel_type, engine_volume, traction, price) {
+  givemestate(id, brand, model, color, fuel_type, engine_volume, traction, price, data) {
     console.log("APP: " + id);
+    this.setState({ data: data });
     this.setState({ id: id });
     this.setState({ brand: brand });
     this.setState({ model: model });
@@ -40,11 +42,21 @@ class App extends Component {
     this.setState({ price: price });
   }
 
+  carToDelete(id) {
+    axios.delete("http://localhost:3001/api/deleteData", {
+      data: {
+        id: id
+      }
+    });
+  }
+
   render() {
     return (<Router>
       <div>
         <Route exact path="/" render={(props) => <Home returnstate={this.givemestate.bind(this)} />} />
-        <Route path="/ViewDetail" render={(props) => <ViewDetail id={this.state.id}
+        <Route path="/ViewDetail" render={(props) => <ViewDetail
+          carDelete={this.carToDelete.bind(this)}
+          id={this.state.id}
           brand={this.state.brand}
           model={this.state.model}
           color={this.state.color}

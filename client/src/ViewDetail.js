@@ -15,6 +15,11 @@ import DoneIcon from '@material-ui/icons/Done';
 
 class ViewDetail extends Component {
 
+
+    a(id) {
+        this.props.carDelete(id)
+    }
+
     createSortHandler = property => event => {
         this.props.onRequestSort(event, property);
     };
@@ -86,11 +91,13 @@ class ViewDetail extends Component {
                             <b> Back</b>
                         </Button>
                     </Link>
-                    <Button size="small"
-                        style={{ width: "150px", backgroundColor: "#000", color: "#fff", marginLeft: "20px", border: "15px", height: "35px", borderRadius: "35px" }}
-                    >
-                        <b>Delete this Car</b>
-                    </Button>
+                    <Link to="/">
+                        <Button size="small"
+                            style={{ width: "150px", backgroundColor: "#000", color: "#fff", marginLeft: "20px", border: "15px", height: "35px", borderRadius: "35px" }}
+                            onClick={e => { this.a(this.props.id) }}>
+                            <b>Delete this Car</b>
+                        </Button>
+                    </Link>
 
                 </CardActions>
             </Card >
