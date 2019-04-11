@@ -28,8 +28,6 @@ class ViewDetail extends Component {
 
     render() {
 
-        //this.givemestate(this.props.id, this.props.brand, this.props.model, this.props.color, this.props.fuel_type, this.props.engine_volume, this.props.traction, this.props.price);
-
         return (
             <div style={{ width: "100%", height: "100%", display: "flex", alignItems: "center", flex: "" }}>
                 <Card style={{ width: "100%", height: "100%", marginLeft: "200px", marginRight: "200px", marginTop: "50px", marginBottom: "50px", border: "15px", borderRadius: "20px" }}>
