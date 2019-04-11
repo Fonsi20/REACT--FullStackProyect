@@ -30,8 +30,11 @@ class Home extends Component {
     };
 
     a(id, brand, model, color, fuel_type, engine_volume, traction, price, data) {
-        console.log("HOME: " + id);
-        this.props.returnstate(id, brand, model, color, fuel_type, engine_volume, traction, price, data)
+        if (id === null) {
+            window.alert("Select one car in the list pleas.");
+        } if (id !== null) {
+            this.props.returnstate(id, brand, model, color, fuel_type, engine_volume, traction, price, data);
+        }
     }
 
     getSelectData = (selected) => {
@@ -291,13 +294,12 @@ class Home extends Component {
                             <b> DELETE</b>
                         </button>
 
-                        <Link to="/viewDetail">
-                            <button
-                                style={{ width: "150px", backgroundColor: "#7BDB86", color: "#fff", marginLeft: "20px", border: "15px", height: "35px", borderRadius: "35px" }}
-                                onClick={e => { this.a(this.state.id, this.state.brand, this.state.model, this.state.color, this.state.fuel_type, this.state.engine_volume, this.state.traction, this.state.price, this.state.date) }}>
-                                <b> DETAILS</b>
-                            </button>
-                        </Link>
+                        <button
+                            style={{ width: "150px", backgroundColor: "#7BDB86", color: "#fff", marginLeft: "20px", border: "15px", height: "35px", borderRadius: "35px" }}
+                            onClick={e => { this.a(this.state.id, this.state.brand, this.state.model, this.state.color, this.state.fuel_type, this.state.engine_volume, this.state.traction, this.state.price, this.state.date) }}>
+                            <b> DETAILS</b>
+                        </button>
+
                     </div>
 
 

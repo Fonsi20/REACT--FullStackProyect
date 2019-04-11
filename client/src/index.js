@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
-import viewDetail from './viewDetail';
+import ViewDetail from './ViewDetail';
 import * as serviceWorker from './serviceWorker';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
@@ -15,13 +15,13 @@ function AppRouter() {
                             <Link to="/">Home</Link>
                         </li>
                         <li>
-                            <Link to="/viewDetail/">Details</Link>
+                            <Link to="/ViewDetail/">Details</Link>
                         </li>
                     </ul>
                 </nav>
 
                 <Route path="./App" exact component={App} />
-                <Route path="./viewDetail" component={viewDetail} />
+                <Route path="./ViewDetail" component={ViewDetail} />
             </div>
         </Router>
     );

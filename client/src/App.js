@@ -5,9 +5,9 @@ import ViewDetail from './ViewDetail';
 import axios from "axios";
 import Home from './Home';
 import ReactDOM from 'react-dom';
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
-
-
+import { Router , Route, Link } from "react-router-dom";
+import {createBrowserHistory} from 'history';
+const history = createBrowserHistory();
 class App extends Component {
 
   // initialize our state 
@@ -40,6 +40,8 @@ class App extends Component {
     this.setState({ engine_volume: engine_volume });
     this.setState({ traction: traction });
     this.setState({ price: price });
+    history.push('/ViewDetail')
+
   }
 
   carToDelete(id) {
@@ -51,7 +53,7 @@ class App extends Component {
   }
 
   render() {
-    return (<Router>
+    return (<Router history={history}>
       <div>
         <Route exact path="/" render={(props) => <Home returnstate={this.givemestate.bind(this)} />} />
         <Route path="/ViewDetail" render={(props) => <ViewDetail
