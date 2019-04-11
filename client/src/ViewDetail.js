@@ -32,41 +32,33 @@ class ViewDetail extends Component {
 
         return (
             <div style={{ width: "100%", height: "100%", display: "flex", alignItems: "center", flex: "" }}>
-                <Card style={{ width: "100%", height: "100%", margin: "200px", border: "15px", borderRadius: "20px", textAlign: "center" }}>
-                    <Typography component="p">
+                <Card style={{ width: "100%", height: "100%", marginLeft: "200px", marginRight: "200px", marginTop: "50px", marginBottom: "50px", border: "15px", borderRadius: "20px" }}>
+                    <Typography component="p"
+                     style={{  margin: "40px" }}>
                         <h1>Detail View</h1>
                     </Typography>
 
-                    <CardMedia
-                        image={img}
-                        title="Contemplative Reptile"
-                    />
+                    <img src={img} />
 
                     <CardContent>
                         <Typography gutterBottom variant="h5" component="h1"
-                            style={{ width: "100", color: "#000", marginBottom: "40px" }}>
+                            style={{ width: "100", color: "#000", marginBottom: "40px" , marginLeft:"31px"  }}>
                             <font size="20"> {this.props.brand}</font>
                         </Typography>
                         <Typography component="p">
                             <div style={{ marginBottom: "10px" }} >
 
-                                <span style={{ marginLeft: "40px" }}>ID:</span>
+
+                                <span style={{ marginLeft: "40px", marginRight:"21px" }}>Model:</span>
                                 <Chip
-                                    style={{ width: "150px", backgroundColor: "#7BDB86", color: "#fff", marginLeft: "20px", border: "15px", height: "35px", borderRadius: "35px" }}
-                                    label={this.props.id}
-                                    color="primary"
-                                    deleteIcon={<DoneIcon />}
-                                />
-                                <span style={{ marginLeft: "40px" }}>Model:</span>
-                                <Chip
-                                    style={{ width: "150px", backgroundColor: "#7BDB86", color: "#fff", marginLeft: "20px", border: "15px", height: "35px", borderRadius: "35px" }}
+                                    style={{ width: "300px", backgroundColor: "#7BDB86", color: "#fff", marginLeft: "20px", border: "15px", height: "35px", borderRadius: "35px" }}
                                     label={this.props.model}
                                     color="primary"
                                     deleteIcon={<DoneIcon />}
                                 />
-                                <span style={{ marginLeft: "40px" }}>Color:</span>
+                                <span style={{ marginLeft: "40px" , marginRight:"61px"  }}>Color:</span>
                                 <Chip
-                                    style={{ width: "150px", backgroundColor: "#7BDB86", color: "#fff", marginLeft: "20px", border: "15px", height: "35px", borderRadius: "35px" }}
+                                    style={{ width: "300px", backgroundColor: "#7BDB86", color: "#fff", marginLeft: "20px", border: "15px", height: "35px", borderRadius: "35px" }}
                                     label={this.props.color}
                                     color="primary"
                                     deleteIcon={<DoneIcon />}
@@ -75,30 +67,30 @@ class ViewDetail extends Component {
                             <div style={{ marginBottom: "10px" }}>
                                 <span style={{ marginLeft: "40px" }}>Fuel Type:</span>
                                 <Chip
-                                    style={{ width: "150px", backgroundColor: "#7BDB86", color: "#fff", marginLeft: "20px", border: "15px", height: "35px", borderRadius: "35px" }}
+                                    style={{ width: "300px", backgroundColor: "#7BDB86", color: "#fff", marginLeft: "20px", border: "15px", height: "35px", borderRadius: "35px" }}
                                     label={this.props.fuel_type}
                                     color="primary"
                                     deleteIcon={<DoneIcon />}
                                 />
                                 <span style={{ marginLeft: "40px" }}>Engine Volume:</span>
                                 <Chip
-                                    style={{ width: "150px", backgroundColor: "#7BDB86", color: "#fff", marginLeft: "20px", border: "15px", height: "35px", borderRadius: "35px" }}
+                                    style={{ width: "300px", backgroundColor: "#7BDB86", color: "#fff", marginLeft: "20px", border: "15px", height: "35px", borderRadius: "35px" }}
                                     label={this.props.engine_volume}
                                     color="primary"
                                     deleteIcon={<DoneIcon />}
                                 />
                             </div>
                             <div style={{ marginBottom: "40px" }}>
-                                <span style={{ marginLeft: "40px" }}>Traction:</span>
+                                <span style={{ marginLeft: "40px" , marginRight:"10px" }}>Traction:</span>
                                 <Chip
-                                    style={{ width: "150px", backgroundColor: "#7BDB86", color: "#fff", marginLeft: "20px", border: "15px", height: "35px", borderRadius: "35px" }}
+                                    style={{ width: "300px", backgroundColor: "#7BDB86", color: "#fff", marginLeft: "20px", border: "15px", height: "35px", borderRadius: "35px" }}
                                     label={this.props.traction}
                                     color="primary"
                                     deleteIcon={<DoneIcon />}
                                 />
-                                <span style={{ marginLeft: "40px" }}>Price:</span>
+                                <span style={{ marginLeft: "40px", marginRight:"61px" }}>Price:</span>
                                 <Chip
-                                    style={{ width: "150px", backgroundColor: "#7BDB86", color: "#fff", marginLeft: "20px", border: "15px", height: "35px", borderRadius: "35px" }}
+                                    style={{ width: "300px", backgroundColor: "#7BDB86", color: "#fff", marginLeft: "20px", border: "15px", height: "35px", borderRadius: "35px" }}
                                     label={this.props.price}
                                     color="primary"
                                     deleteIcon={<DoneIcon />}
