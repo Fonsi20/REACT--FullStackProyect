@@ -30,7 +30,7 @@ class Home extends Component {
     };
 
     a(id, brand, model, color, fuel_type, engine_volume, traction, price, data) {
-        console.log("HOME: "+id);
+        console.log("HOME: " + id);
         this.props.returnstate(id, brand, model, color, fuel_type, engine_volume, traction, price, data)
     }
 
@@ -117,7 +117,8 @@ class Home extends Component {
             }
         });
 
-        if (idToBeAdded !== null, brand !== null, model !== null, color !== null, fuel_type !== null, engine_volume !== null, traction !== null, price !== null) {
+        if (idToBeAdded !== null && brand !== null && model !== null && color !== null && fuel_type !== null && engine_volume !== null && traction !== null && price !== null) {
+            console.log("PASA");
             axios.post("http://localhost:3001/api/putData", {
                 id: idToBeAdded,
                 brand: brand,
@@ -129,6 +130,9 @@ class Home extends Component {
                 price: price
             });
             this.clearFields();
+        }
+        else {
+            window.alert("Write all the fields!");
         }
     };
 
