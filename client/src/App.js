@@ -1,4 +1,7 @@
 
+//Author: Alfonso Fernandez Alvarez
+//Version: 1.0
+
 // /client/App.js
 import React, { Component } from "react";
 import ViewDetail from './ViewDetail';
@@ -8,9 +11,11 @@ import ReactDOM from 'react-dom';
 import { Router , Route, Link } from "react-router-dom";
 import {createBrowserHistory} from 'history';
 const history = createBrowserHistory();
+
+
 class App extends Component {
 
-  // initialize our state 
+  // initialize our generic States
   state = {
     data: [],
     id: null,
@@ -29,6 +34,8 @@ class App extends Component {
     newselected: [],
   };
 
+
+  //Save the states that i recive of the components
   givemestate(id, brand, model, color, fuel_type, engine_volume, traction, price, data) {
     console.log("APP: " + id);
     this.setState({ data: data });
@@ -44,6 +51,7 @@ class App extends Component {
 
   }
 
+  //Delete one car after see it in the detail view
   carToDelete(id) {
     axios.delete("http://localhost:3001/api/deleteData", {
       data: {
@@ -52,6 +60,8 @@ class App extends Component {
     });
   }
 
+
+  //Render de Home or Detail View
   render() {
     return (<Router history={history}>
       <div>
@@ -73,6 +83,4 @@ class App extends Component {
 }
 
 ReactDOM.render(<App />, document.querySelector('#root'));
-
-
 export default App;

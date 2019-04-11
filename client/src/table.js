@@ -1,3 +1,8 @@
+//Author: Alfonso Fernandez Alvarez
+//Version: 1.0
+
+
+// /client/table.js
 import React from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
@@ -17,12 +22,14 @@ import Tooltip from '@material-ui/core/Tooltip';
 import { lighten } from '@material-ui/core/styles/colorManipulator';
 
 
+//Create table with the information of Home State
 let counter = 0;
 function createData(id, brand, model, color, fuel_type, engine_volume, traction, price) {
   counter += 1;
   return { id: id, brand, model, color, fuel_type, engine_volume, traction, price };
 }
 
+//function of order number
 function desc(a, b, orderBy) {
   if (b[orderBy] < a[orderBy]) {
     return -1;
@@ -33,6 +40,7 @@ function desc(a, b, orderBy) {
   return 0;
 }
 
+//function for order
 function stableSort(array, cmp) {
   const stabilizedThis = array.map((el, index) => [el, index]);
   stabilizedThis.sort((a, b) => {
@@ -43,10 +51,12 @@ function stableSort(array, cmp) {
   return stabilizedThis.map(el => el[0]);
 }
 
+//if not change the type, orderby, only change asc or desc
 function getSorting(order, orderBy) {
   return order === 'desc' ? (a, b) => desc(a, b, orderBy) : (a, b) => -desc(a, b, orderBy);
 }
 
+//id of the table
 const rows = [
   { id: 'id', numeric: true, disablePadding: true, label: 'ID' },
   { id: 'brand', numeric: false, disablePadding: false, label: 'Brand' },
@@ -58,6 +68,7 @@ const rows = [
   { id: 'price', numeric: true, disablePadding: false, label: 'Price' },
 ];
 
+//Class of the table
 class EnhancedTableHead extends React.Component {
   createSortHandler = property => event => {
     this.props.onRequestSort(event, property);
@@ -207,6 +218,7 @@ class EnhancedTable extends React.Component {
     this.setState({ order, orderBy });
   };
 
+  //select all the checks
   handleSelectAllClick = event => {
     const data = this.props.info;
     const all = [];
@@ -224,6 +236,7 @@ class EnhancedTable extends React.Component {
     this.props.selected([]);
   };
 
+  //clicks in the tables, checks and orders
   handleClick = (event, id) => {
     const { selected } = this.state;
     const selectedIndex = selected.indexOf(id);
@@ -246,17 +259,21 @@ class EnhancedTable extends React.Component {
     this.props.selected(newSelected);
   };
 
+  //set changes
   handleChangePage = (event, page) => {
     this.setState({ page });
   };
 
+  //changes or row for page
   handleChangeRowsPerPage = event => {
     this.setState({ rowsPerPage: event.target.value });
   };
 
+  //check if is selected
   isSelected = id => this.state.selected.indexOf(id) !== -1;
 
   render() {
+    //Recive the props
     const { order, orderBy, rowsPerPage, page } = this.state;
     const data = this.props.info;
     const emptyRows = rowsPerPage - Math.min(rowsPerPage, data.length - page * rowsPerPage);
@@ -336,6 +353,7 @@ class EnhancedTable extends React.Component {
   }
 }
 
+//Types of props
 EnhancedTable.propTypes = {
   classes: PropTypes.object.isRequired,
   optionalArray: PropTypes.array,

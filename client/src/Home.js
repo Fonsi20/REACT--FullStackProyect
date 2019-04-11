@@ -1,5 +1,8 @@
+//Author: Alfonso Fernandez Alvarez
+//Version: 1.0
 
-// /client/App.js
+
+// /client/Home.js
 import React, { Component } from "react";
 import axios from "axios";
 
@@ -29,6 +32,7 @@ class Home extends Component {
         newselected: [],
     };
 
+    //Funcion that send information of Home to App, for after send it to other sites
     a(id, brand, model, color, fuel_type, engine_volume, traction, price, data) {
         if (id === null) {
             window.alert("Select one car in the list pleas.");
@@ -37,6 +41,7 @@ class Home extends Component {
         }
     }
 
+    //After select one row I take the information of these row
     getSelectData = (selected) => {
         let newselected = selected;
         this.setState({ selected: newselected });
@@ -51,6 +56,7 @@ class Home extends Component {
         }
     }
 
+    //I take the information that i want and change the state of someone parameters
     loadData(id, brand, model, color, fuel_type, engine_volume, traction, price) {
         this.state.data.forEach(data => {
             if (data.id === id) {
@@ -74,6 +80,7 @@ class Home extends Component {
         });
     }
 
+    //Clear de fields for security
     clearFields() {
         document.getElementById("brand").value = "";
         document.getElementById("model").value = "";
@@ -85,6 +92,7 @@ class Home extends Component {
         document.getElementById("idToDelete").value = "";
     }
 
+    //For see if i dont have any problem with my BBDD
     componentDidMount() {
         this.getDataFromDb();
         if (!this.state.intervalIsSet) {
@@ -92,7 +100,7 @@ class Home extends Component {
             this.setState({ intervalIsSet: interval });
         }
     }
-
+    //For see if i dont have any problem with my BBDD
     componentWillUnmount() {
         if (this.state.intervalIsSet) {
             clearInterval(this.state.intervalIsSet);
@@ -100,6 +108,7 @@ class Home extends Component {
         }
     }
 
+    //Obtain the Data of my DDBB
     getDataFromDb = () => {
         fetch("http://localhost:3001/api/getData")
             .then(data => data.json())
@@ -107,6 +116,7 @@ class Home extends Component {
         console.log(this.state.selected);
     };
 
+     //Insert information in our DDBB, the ID is a autoincrement and check if the fields are empty
     putDataToDB = (brand, model, color, fuel_type, engine_volume, traction, price) => {
         let currentIds = this.state.data.map(data => data.id);
         let idToBeAdded = 1;
@@ -121,7 +131,6 @@ class Home extends Component {
         });
 
         if (idToBeAdded !== null && brand !== null && model !== null && color !== null && fuel_type !== null && engine_volume !== null && traction !== null && price !== null) {
-            console.log("PASA");
             axios.post("http://localhost:3001/api/putData", {
                 id: idToBeAdded,
                 brand: brand,
@@ -139,6 +148,7 @@ class Home extends Component {
         }
     };
 
+    //Delete one row of my DDBB using the ID
     deleteFromDB = idTodelete => {
         let objIdToDelete = null;
 
@@ -164,6 +174,7 @@ class Home extends Component {
         });
     }
 
+    //Update the information of my DDBB using the ID
     updateDB = (idToUpdate, brand, model, color, fuel_type, engine_volume, traction, price) => {
         let objIdToUpdate = null;
         this.state.data.forEach(dat => {
@@ -192,7 +203,7 @@ class Home extends Component {
         });
     };
 
-
+    // Renderin the view of Home and the Table
     render() {
         const { classes } = this.props;
         const { data } = this.state; console.log(data)
@@ -312,10 +323,6 @@ class Home extends Component {
                             onChange={e => this.setState({ idToDelete: e.target.value })}
                             placeholder="Put id of item to delete here"
                         />
-                        <button onClick={() => this.deleteFromDB(this.state.idToDelete)}
-                            style={{ width: "150px", backgroundColor: "#ab47bc", color: "#fff", marginLeft: "20px", border: "15px", height: "35px", borderRadius: "35px" }}>
-                            <b> DELETE</b>
-                        </button>
                     </div>
                 </div >
 
@@ -323,27 +330,6 @@ class Home extends Component {
                     <EnhancedTable info={data} selected={this.getSelectData.bind(this)} numselect={this.state.selected} />
                 </React.Fragment>
 
-                <ul style={{ color: "#fff", backgroundColor: "#7b1fa2", padding: "50px", marginBottom: "0px", marginLeft: "0px", marginRight: "0px", marginTop: "50px", display: "none" }}>
-                    <div style={{ color: "#fff", fontFamily: "Verdana" }} ><h1><b>LIST OF CARS -</b> {data.length}</h1></div>
-                    {data.length <= 0
-                        ? "NO DB ENTRIES YET"
-                        : data.map(dat => (
-
-                            <ul id={dat.id}
-                                onClick={() => this.loadData(dat.id, dat.brand, dat.model, dat.color, dat.fuel_type, dat.engine_volume, dat.traction, dat.price)}
-                                style={{ textAlign: "center", backgroundColor: "#4a148c", borderRadius: "15px", padding: "40px", marginBottom: "15px" }}
-                                key={data.price}>
-                                <font size="20"><span style={{ color: "#f8bbd0" }}><b>ID: </b></span> {dat.id}</font> <br />
-                                <span style={{ color: "#f8bbd0", fontFamily: "Verdana" }}><b> Brand: </b></span> {dat.brand}
-                                <span style={{ color: "#f8bbd0", paddingLeft: "40px", fontFamily: "Verdana" }}> <b>Model: </b></span> {dat.model}
-                                <span style={{ color: "#f8bbd0", paddingLeft: "40px", fontFamily: "Verdana" }}><b> Color: </b></span> {dat.color}
-                                <span style={{ color: "#f8bbd0", paddingLeft: "40px", fontFamily: "Verdana" }}><b> Fuel Type: </b></span> {dat.fuel_type} <br />
-                                <span style={{ color: "#f8bbd0", fontFamily: "Verdana" }}><b> Engine Volume: </b></span> {dat.engine_volume}
-                                <span style={{ color: "#f8bbd0", paddingLeft: "40px", fontFamily: "Verdana" }}><b> Traction: </b></span> {dat.traction}
-                                <span style={{ color: "#f8bbd0", paddingLeft: "40px", fontFamily: "Verdana" }}><b> Price: </b></span> {dat.price} <br />
-                            </ul>
-                        ))}
-                </ul>
             </div >
         );
     }
