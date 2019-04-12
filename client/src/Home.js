@@ -5,7 +5,6 @@
 // /client/Home.js
 import React, { Component } from "react";
 import axios from "axios";
-
 import ReactDOM from 'react-dom';
 import { EnhancedTable } from './table';
 import TextField from '@material-ui/core/TextField';
@@ -116,7 +115,7 @@ class Home extends Component {
         console.log(this.state.selected);
     };
 
-     //Insert information in our DDBB, the ID is a autoincrement and check if the fields are empty
+    //Insert information in our DDBB, the ID is a autoincrement and check if the fields are empty
     putDataToDB = (brand, model, color, fuel_type, engine_volume, traction, price) => {
         let currentIds = this.state.data.map(data => data.id);
         let idToBeAdded = 1;
@@ -212,82 +211,83 @@ class Home extends Component {
             <div style={{ backgroundColor: "#eceff1", paddingTop: "50px" }}>
                 <p style={{ color: "#000", fontFamily: "Verdana", textAlign: "center" }} ><h1><b>Pract Cars - List</b></h1>Fonsi Fernandez Alvarez</p>
                 <div style={{ textAlign: "-webkit-center" }}>
-                    <div style={{ padding: "10px" }}>
+              
+                        <div style={{ padding: "10px" }}>
 
-                        <TextField
-                            id="brand"
-                            type="text"
-                            onChange={e => this.setState({ brand: e.target.value })}
-                            placeholder="Brand"
-                            style={{ width: "1030px", height: "30px", paddingLeft: "15px", border: "15px", borderRadius: "20px" }}
-                        />
+                            <TextField
+                                id="brand"
+                                type="text"
+                                onChange={e => this.setState({ brand: e.target.value })}
+                                placeholder="Brand"
+                                style={{ color: "#53D061", width: "1030px", height: "30px", paddingLeft: "15px", border: "15px", borderRadius: "20px" }}
+                            />
 
-                    </div>
-                    <div style={{ padding: "10px" }}>
+                        </div>
+                        <div style={{ padding: "10px" }}>
 
-                        <TextField
-                            id="model"
-                            type="text"
-                            onChange={e => this.setState({ model: e.target.value })}
-                            placeholder="Model"
-                            style={{ width: "500px", paddingLeft: "15px", border: "15px", height: "30px", borderRadius: "20px" }}
-                        />
+                            <TextField
+                                id="model"
+                                type="text"
+                                onChange={e => this.setState({ model: e.target.value })}
+                                placeholder="Model"
+                                style={{ width: "500px", paddingLeft: "15px", border: "15px", height: "30px", borderRadius: "20px" }}
+                            />
 
-                        <TextField
-                            id="color"
-                            type="text"
-                            onChange={e => this.setState({ color: e.target.value })}
-                            placeholder="Color"
-                            style={{ width: "500px", paddingLeft: "15px", marginLeft: "10px", height: "30px", border: "15px", borderRadius: "20px" }}
-                        />
+                            <TextField
+                                id="color"
+                                type="text"
+                                onChange={e => this.setState({ color: e.target.value })}
+                                placeholder="Color"
+                                style={{ width: "500px", paddingLeft: "15px", marginLeft: "10px", height: "30px", border: "15px", borderRadius: "20px" }}
+                            />
 
-                    </div>
-                    <div style={{ padding: "10px" }}>
+                        </div>
+                        <div style={{ padding: "10px" }}>
 
-                        <TextField
-                            id="fuel_type"
-                            type="text"
-                            onChange={e => this.setState({ fuel_type: e.target.value })}
-                            placeholder="Fuel Type"
-                            style={{ width: "500px", paddingLeft: "15px", border: "15px", height: "30px", borderRadius: "20px" }}
-                        />
+                            <TextField
+                                id="fuel_type"
+                                type="text"
+                                onChange={e => this.setState({ fuel_type: e.target.value })}
+                                placeholder="Fuel Type"
+                                style={{ width: "500px", paddingLeft: "15px", border: "15px", height: "30px", borderRadius: "20px" }}
+                            />
 
-                        <TextField
-                            id="engine_volume"
-                            type="text"
-                            onChange={e => this.setState({ engine_volume: e.target.value })}
-                            placeholder="Engine Volume"
-                            style={{ width: "500px", paddingLeft: "15px", marginLeft: "10px", height: "30px", border: "15px", borderRadius: "20px" }}
-                        />
+                            <TextField
+                                id="engine_volume"
+                                type="text"
+                                onChange={e => this.setState({ engine_volume: e.target.value })}
+                                placeholder="Engine Volume"
+                                style={{ width: "500px", paddingLeft: "15px", marginLeft: "10px", height: "30px", border: "15px", borderRadius: "20px" }}
+                            />
 
 
-                    </div>
-                    <div style={{ padding: "10px" }}>
+                        </div>
+                        <div style={{ padding: "10px" }}>
 
-                        <TextField
-                            id="traction"
-                            type="text"
-                            onChange={e => this.setState({ traction: e.target.value })}
-                            placeholder="Traction"
-                            style={{ width: "500px", paddingLeft: "15px", border: "15px", height: "30px", borderRadius: "20px" }}
-                        />
+                            <TextField
+                                id="traction"
+                                type="text"
+                                onChange={e => this.setState({ traction: e.target.value })}
+                                placeholder="Traction"
+                                style={{ width: "500px", paddingLeft: "15px", border: "15px", height: "30px", borderRadius: "20px" }}
+                            />
 
-                        <TextField
-                            id="price"
-                            type="text"
-                            onChange={e => this.setState({ price: e.target.value })}
-                            placeholder="Price"
-                            style={{ width: "500px", paddingLeft: "15px", marginLeft: "10px", height: "30px", border: "15px", borderRadius: "20px" }}
-                        />
+                            <TextField
+                                id="price"
+                                type="text"
+                                onChange={e => this.setState({ price: e.target.value })}
+                                placeholder="Price"
+                                style={{ width: "500px", paddingLeft: "15px", marginLeft: "10px", height: "30px", border: "15px", borderRadius: "20px" }}
+                            />
 
-                        <input
-                            id="id"
-                            type="text"
-                            onChange={e => this.setState({ id: e.target.value })}
-                            placeholder="id"
-                            style={{ width: "500px", paddingLeft: "15px", marginLeft: "10px", height: "30px", border: "15px", display: "none", borderRadius: "20px" }}
-                        />
-                    </div>
+                            <input
+                                id="id"
+                                type="text"
+                                onChange={e => this.setState({ id: e.target.value })}
+                                placeholder="id"
+                                style={{ width: "500px", paddingLeft: "15px", marginLeft: "10px", height: "30px", border: "15px", display: "none", borderRadius: "20px" }}
+                            />
+                        </div>
 
                     <div style={{ paddingTop: "10px", paddingBottom: "50px", paddingTop: "50px" }}>
                         <button onClick={() => { this.putDataToDB(this.state.brand, this.state.model, this.state.color, this.state.fuel_type, this.state.engine_volume, this.state.traction, this.state.price) }}

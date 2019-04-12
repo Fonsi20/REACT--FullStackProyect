@@ -81,6 +81,7 @@ class EnhancedTableHead extends React.Component {
         <TableRow>
           <TableCell padding="checkbox">
             <Checkbox
+              style={{ color: "#53D061" }}
               indeterminate={numSelected > 0 && numSelected < rowCount}
               checked={numSelected === rowCount}
               onChange={onSelectAllClick}
@@ -155,18 +156,18 @@ let EnhancedTableToolbar = props => {
   const { numSelected, classes } = props;
 
   return (
-    <Toolbar style={{ backgroundColor:"lightseagreen"}}
+    <Toolbar style={{ backgroundColor: "lightseagreen" }}
       className={classNames(classes.root, {
         [classes.highlight]: numSelected > 0,
       })}
     >
       <div className={classes.title}>
         {numSelected > 0 ? (
-          <Typography color="default" variant="h6">
+          <Typography color="default" variant="h4" style={{color:"#fff"}}>
             {numSelected} selected
           </Typography>
         ) : (
-            <Typography variant="h6" id="tableTitle">
+            <Typography variant="h4" id="tableTitle" style={{color:"#fff"}}>
               List of Cars
           </Typography>
           )}
@@ -310,7 +311,7 @@ class EnhancedTable extends React.Component {
                       selected={isSelected}
                     >
                       <TableCell padding="checkbox">
-                        <Checkbox checked={isSelected} />
+                        <Checkbox checked={isSelected} style={{ color: "#53D061" }} />
                       </TableCell>
                       <TableCell component="th" scope="row" padding="none" align="center">
                         {n.id}
