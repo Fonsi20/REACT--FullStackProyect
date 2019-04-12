@@ -2,8 +2,11 @@ This project is developed by **Alfonso Fernandez Alvarez**.
 
 ## Before launching the project
 
-First of all you need to install [Nodejs](https://nodejs.org/es/download/) for making the server and [Mongodb](https://www.mongodb.com/download-center/community) for the DDBB. Install the mongoDB Community Server and launch it.<br>
-Don't worry about the tables and the DDBB, the project create it automatically.
+First of all you need to install [Nodejs](https://nodejs.org/es/download/) for making the server and [Mongodb](https://www.mongodb.com/download-center/community) for the DDBB. Install the mongoDB Community Server and launch it.
+
+Don't worry about the tables and the **DDBB**, **the project create it automatically**.
+
+About the **modules** you don't have to worry, they are installed in the module folder of the project. 
 
 ## Launch the Server
 
