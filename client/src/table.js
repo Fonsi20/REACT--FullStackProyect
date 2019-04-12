@@ -78,7 +78,7 @@ class EnhancedTableHead extends React.Component {
     const { onSelectAllClick, order, orderBy, numSelected, rowCount } = this.props;
     return (
       <TableHead>
-        <TableRow>
+        <TableRow >
           <TableCell padding="checkbox">
             <Checkbox
               style={{ color: "#53D061" }}
@@ -156,7 +156,8 @@ let EnhancedTableToolbar = props => {
   const { numSelected, classes } = props;
 
   return (
-    <Toolbar style={{ backgroundColor: "lightseagreen" }}
+    <Toolbar
+    style={{ backgroundColor: "lightseagreen" }}
       className={classNames(classes.root, {
         [classes.highlight]: numSelected > 0,
       })}
@@ -283,8 +284,8 @@ class EnhancedTable extends React.Component {
     console.log(order);
 
     return (
-      <Paper>
-        <EnhancedTableToolbar numSelected={this.props.numselect.length} />
+      <Paper style={{ overflowX:"auto" }}>
+        <EnhancedTableToolbar numSelected={this.props.numselect.length}  />
         <div>
           <Table aria-labelledby="tableTitle">
             <EnhancedTableHead

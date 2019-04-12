@@ -219,18 +219,18 @@ class Home extends Component {
                             type="text"
                             onChange={e => this.setState({ brand: e.target.value })}
                             placeholder="Brand"
-                            style={{ width: "1030px", height: "30px", paddingLeft: "15px", border: "15px", borderRadius: "20px" }}
+                            style={{ width: "320px", height: "30px", border: "15px", borderRadius: "20px" }}
                         />
 
                     </div>
-                    <div style={{ padding: "10px" }}>
+                    <div>
 
                         <TextField
                             id="model"
                             type="text"
                             onChange={e => this.setState({ model: e.target.value })}
                             placeholder="Model"
-                            style={{ width: "500px", paddingLeft: "15px", border: "15px", height: "30px", borderRadius: "20px" }}
+                            style={{ width: "320px", padding: "10px", border: "15px", height: "30px", borderRadius: "20px" }}
                         />
 
                         <TextField
@@ -238,18 +238,18 @@ class Home extends Component {
                             type="text"
                             onChange={e => this.setState({ color: e.target.value })}
                             placeholder="Color"
-                            style={{ width: "500px", paddingLeft: "15px", marginLeft: "10px", height: "30px", border: "15px", borderRadius: "20px" }}
+                            style={{ width: "320px", padding: "10px", height: "30px", border: "15px", borderRadius: "20px" }}
                         />
 
                     </div>
-                    <div style={{ padding: "10px" }}>
+                    <div>
 
                         <TextField
                             id="fuel_type"
                             type="text"
                             onChange={e => this.setState({ fuel_type: e.target.value })}
                             placeholder="Fuel Type"
-                            style={{ width: "500px", paddingLeft: "15px", border: "15px", height: "30px", borderRadius: "20px" }}
+                            style={{ width: "320px",padding: "10px", border: "15px", height: "30px", borderRadius: "20px" }}
                         />
 
                         <TextField
@@ -257,19 +257,19 @@ class Home extends Component {
                             type="text"
                             onChange={e => this.setState({ engine_volume: e.target.value })}
                             placeholder="Engine Volume"
-                            style={{ width: "500px", paddingLeft: "15px", marginLeft: "10px", height: "30px", border: "15px", borderRadius: "20px" }}
+                            style={{ width: "320px",  padding: "10px", height: "30px", border: "15px", borderRadius: "20px" }}
                         />
 
 
                     </div>
-                    <div style={{ padding: "10px" }}>
+                    <div>
 
                         <TextField
                             id="traction"
                             type="text"
                             onChange={e => this.setState({ traction: e.target.value })}
                             placeholder="Traction"
-                            style={{ width: "500px", paddingLeft: "15px", border: "15px", height: "30px", borderRadius: "20px" }}
+                            style={{ width: "320px",padding: "10px",  border: "15px", height: "30px", borderRadius: "20px" }}
                         />
 
                         <TextField
@@ -277,7 +277,7 @@ class Home extends Component {
                             type="text"
                             onChange={e => this.setState({ price: e.target.value })}
                             placeholder="Price"
-                            style={{ width: "500px", paddingLeft: "15px", marginLeft: "10px", height: "30px", border: "15px", borderRadius: "20px" }}
+                            style={{ width: "320px", padding: "10px", height: "30px", border: "15px", borderRadius: "20px" }}
                         />
 
                         <input
@@ -285,28 +285,28 @@ class Home extends Component {
                             type="text"
                             onChange={e => this.setState({ id: e.target.value })}
                             placeholder="id"
-                            style={{ width: "500px", paddingLeft: "15px", marginLeft: "10px", height: "30px", border: "15px", display: "none", borderRadius: "20px" }}
+                            style={{ width: "320px", paddingLeft: "15px", margin: "10px", height: "30px", border: "15px", display: "none", borderRadius: "20px" }}
                         />
                     </div>
 
                     <div style={{ paddingTop: "10px", paddingBottom: "50px", paddingTop: "50px" }}>
                         <button onClick={() => { this.putDataToDB(this.state.brand, this.state.model, this.state.color, this.state.fuel_type, this.state.engine_volume, this.state.traction, this.state.price) }}
-                            style={{ width: "150px", backgroundColor: "#53D061", color: "#fff", marginLeft: "10px", border: "15px", height: "35px", borderRadius: "35px" }}>
+                            style={{ width: "150px", backgroundColor: "#53D061", color: "#fff", margin: "10px", border: "15px", height: "35px", borderRadius: "35px" }}>
                             <b>ADD</b>
                         </button>
 
                         <button onClick={() => { this.updateDB(this.state.id, this.state.brand, this.state.model, this.state.color, this.state.fuel_type, this.state.engine_volume, this.state.traction, this.state.price) }}
-                            style={{ width: "150px", backgroundColor: "#53D061", color: "#fff", marginLeft: "20px", border: "15px", height: "35px", borderRadius: "35px" }}>
+                            style={{ width: "150px", backgroundColor: "#53D061", color: "#fff", margin: "10px", border: "15px", height: "35px", borderRadius: "35px" }}>
                             <b>UPDATE</b>
                         </button>
 
                         <button onClick={() => this.deleteFromDB(this.state.selected)}
-                            style={{ width: "150px", backgroundColor: "#53D061", color: "#fff", marginLeft: "20px", border: "15px", height: "35px", borderRadius: "35px" }}>
+                            style={{ width: "150px", backgroundColor: "#53D061", color: "#fff", margin: "10px", border: "15px", height: "35px", borderRadius: "35px" }}>
                             <b> DELETE</b>
                         </button>
 
                         <button
-                            style={{ width: "150px", backgroundColor: "#7BDB86", color: "#fff", marginLeft: "20px", border: "15px", height: "35px", borderRadius: "35px" }}
+                            style={{ width: "150px", backgroundColor: "#7BDB86", color: "#fff", margin: "10px", border: "15px", height: "35px", borderRadius: "35px" }}
                             onClick={e => { this.a(this.state.id, this.state.brand, this.state.model, this.state.color, this.state.fuel_type, this.state.engine_volume, this.state.traction, this.state.price, this.state.date) }}>
                             <b> DETAILS</b>
                         </button>
