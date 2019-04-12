@@ -1,5 +1,12 @@
 This project is developed by **Alfonso Fernandez Alvarez**.
 
+# List Cars Test
+
+[![Platform](https://img.shields.io/badge/Platform-React-green.svg)
+[![Version](https://img.shields.io/badge/Version-1.0-green.svg)
+[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
+[![FollowGitHub](https://img.shields.io/github/followers/:user.svg?label=Follow)](https://github.com/Fonsi20)
+
 ## Before launching the project
 
 First of all you need to install [Nodejs](https://nodejs.org/es/download/) for making the server and [Mongodb](https://www.mongodb.com/download-center/community) for the DDBB. Install the mongoDB Community Server and launch it.
