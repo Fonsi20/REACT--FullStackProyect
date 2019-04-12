@@ -1,4 +1,4 @@
-This project is developed by Alfonso Fernandez Alvarez.
+This project is developed by **Alfonso Fernandez Alvarez**.
 
 ## Before launching the project
 
@@ -6,8 +6,8 @@ First of all you need to install [Nodejs](https://nodejs.org/es/download/) for m
 
 ## Launch the Server
 
-Enter in <br>
-**\fullstack_app\client\backend**<br>
+Enter in.<br>
+**\fullstack_app\client\backend**
 And with this code
 ### `node .\server.js`
 you can launch the server.
