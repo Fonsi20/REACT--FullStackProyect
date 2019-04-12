@@ -2,8 +2,9 @@ This project is developed by **Alfonso Fernandez Alvarez**.
 
 # List Cars Test
 
-![Platform](https://img.shields.io/badge/Platform-React-green.svg)
-![Server](https://img.shields.io/badge/Server-Nodejs-green.svg)
+[![Platform](https://img.shields.io/badge/Platform-React-green.svg)](https://reactjs.org/)
+[![Server](https://img.shields.io/badge/Server-Nodejs-green.svg)](https://nodejs.org/es/download/)
+[![BBDD](https://img.shields.io/badge/DDBB-mongoDB-green.svg)](https://www.mongodb.com/download-center/community)
 ![Version](https://img.shields.io/badge/Version-1.0-green.svg)
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 [![FollowGitHub](https://img.shields.io/badge/Follow-GitHub-lightgrey.svg)](https://github.com/Fonsi20)
