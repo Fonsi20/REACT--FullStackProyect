@@ -164,7 +164,7 @@ let EnhancedTableToolbar = props => {
       <div className={classes.title}>
         {numSelected > 0 ? (
           <Typography color="default" variant="h4" style={{color:"#fff"}}>
-            {numSelected} selected
+            {numSelected} Selected
           </Typography>
         ) : (
             <Typography variant="h4" id="tableTitle" style={{color:"#fff"}}>
