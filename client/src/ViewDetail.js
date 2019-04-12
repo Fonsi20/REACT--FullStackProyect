@@ -45,7 +45,7 @@ class ViewDetail extends Component {
 
                     <CardContent>
                         <Typography gutterBottom variant="h5" component="h1"
-                            style={{ width: "100", color: "#000", marginBottom: "40px", marginLeft: "31px" }}>
+                            style={{ width: "100", color: "#000", marginBottom: "40px", margin: "31px" }}>
                             <font size="20"> {this.props.brand}</font>
                         </Typography>
                         <Typography component="p">
